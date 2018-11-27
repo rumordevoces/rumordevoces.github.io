@@ -1,47 +1,45 @@
 /* CSS Document */
 
-
 * {
 margin : 0;
 padding : 0;
 }
 body {
-	font-family: MikadoRegular;
-	src: url("MikadoRegular.otf");
-	font-size : 14px;
-	letter-spacing: 0.7px; 
+	background : url(http://www.laurabalboa.com/images/ba1.gif) repeat scroll 0 0;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 13px;
+	letter-spacing: normal;
 }
-
-		a:link,
-		a:visited {
-			text-decoration: none;
-			background-color: rgba(255,201,3,0.65);
-			/*background-color: rgba(255, 255, 255, 1);*/
-			color: #000;
-		}
-
+img{background:url('www.laurabalboa.com/images/ajax-loader.gif') no-repeat center;}
+a:link {
+color : #000;
+text-decoration : none;
+}
 a:active {
 text-decoration : line-through;
 }
-
+a:visited {
+color : #707070;
+text-decoration : none;
+}
 a:hover {
-color : #282828;
-text-decoration : line-through;
+color : #004cff;
+/*text-decoration : line-through;*/
 }
 a img {
 border : medium none;
 }
 #menu {
-background: transparent;
-bottom : 0;
-height : 100%;
-text-align : left;
-left : 20px;
-margin-top : 20px;
-overflow : auto;
-position : fixed;
-top : 0;
-width : 230px;
+    background: transparent;
+    bottom: 0;
+    height: 100%;
+    text-align: left;
+    left: 320px;
+    margin-top: 620px;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    width: 330px;
 }
 #menu ul {
 list-style-image : none;
@@ -51,21 +49,12 @@ margin : 0 0 15px;
 }
 #menu ul li.section-title {
 	color : #000000;
-	font-family: MikadoRegular;
-	src: url("MikadoRegular.otf");
+	font-family : georgia;
 	font-size : 80%;
+	font-style : italic;
+	font-weight: bold;
 	background-color: #ffffff;
-	  letter-spacing: 0.6em; 
-
 }
-
-		canvas {
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 0;
-		}
-
 #content {
 	height : 100%;
 	margin : 0 0 0 0;
@@ -73,34 +62,17 @@ margin : 0 0 15px;
 	width: 800px;
 	margin-left: 270px;
 	text-align: left;
-
 }
-
-		#contenu {
-			margin-top: 20px;
-			margin-left: 20px;
-		}
-		
-		#contenu {
-			position: relative;
-			z-index: 2;
-		}
-
 .container {
 margin-top : 20px;
 margin-left : 20px;
 }
-#content p8 {
-width : 660px;
-margin-top : 10px;
-}
-
 #content p {
-width : 575px;
+width : 800px;
 margin-top : 10px;
 }
 p {
-text-align: justify;
+margin : 0 0 0 0;
 }
 h1 {
 font-size : 32px;
@@ -134,63 +106,107 @@ margin-bottom : 6px;
 display : block;
 }
 
-sub {
-    background-color: rgba(10,10,10,0.4);
+
+/**/
+
+#welcome {
+  position: absolute;
+  top: 640px;
+  left: 350px;
+  width: auto;
+  height: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
 }
 
-sub1 {
-	background-color: rgba(255,0,170,0.35);
+body {
+  background: black;
 }
 
-sub2 {
-	background-color: rgba(250,170,0,0.4);
+
+/* .button */
+
+#speechbubble {
+  display: inline-block;
+  position: relative;
+  margin: 0px;
+  padding: 0.67em;
+  border: 0px solid #000;
+  overflow: hidden;
+  text-decoration: none;
+  font-size: 12px;
+  outline: none;
+  color: #000;
+  background: transparent;
+  font-family: 'raleway', sans-serif;
 }
 
-sub3 {
-	background-color: rgba(0,250,219,0.4);
+#speechbubble span {
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
-sub5 {
-	background-color: rgba(255,0,219,2);
+#speechbubble:before {
+  content: '';
+  position: absolute;
+  top: 0.67em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: .4s, opacity .6s;
+  -moz-transition: .4s, opacity .6s;
+  -o-transition: .4s, opacity .6s;
+  transition: .4s, opacity .6s;
 }
 
-sub6 {
-	background-color: rgba(208,0,255, 0.8);
+
+/* :before */
+
+#speechbubble:before {
+  content: attr(data-hover);
+  -webkit-transform: translate(-150%, 0);
+  -moz-transform: translate(-150%, 0);
+  -ms-transform: translate(-150%, 0);
+  -o-transform: translate(-150%, 0);
+  transform: translate(-150%, 0);
 }
 
-sub7 {
-	background-color: rgba(255,255,255);
+
+/* Span on :hover and :active */
+
+#speechbubble:hover span {
+  opacity: 0;
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  -o-transform: scale(0.3);
+  transform: scale(0.3);
 }
 
-@font-face {
-			font-family: MikadoRegular;
-			src: url("MikadoRegular.otf");
-		}
 
-		/* #### Mobile Phones Portrait #### */
-		
-		@media screen and (max-device-width: 480px) and (orientation: portrait) {
-			p {
-				font-size: 0.6rem;
-				margin-top: 3rem;
-				font-family: MikadoRegular;
-				src: url("MikadoRegular.otf");
-				font-weight: normal;
-				line-height: 1rem;
-				padding-right: 0.6rem;
-				max-width: 85%;
-			}
-		}
-		/* #### Mobile Phones Landscape #### */
-		
-		@media screen and (max-device-width: 640px) and (orientation: landscape) {
-			p {
-				font-size: 1.2rem;
-				font-family: MikadoRegular;
-				src: url("MikadoRegular.otf");
-				font-weight: normal;
-				line-height: 10px;
-				padding-right: 0.6rem;
-				max-width: 45%;
-			}
+/*  
+    We show :before pseudo-element on :hover 
+    
+*/
+
+#speechbubble:hover:before {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition-delay: .4s;
+  -moz-transition-delay: .4s;
+  -o-transition-delay: .4s;
+  transition-delay: .4s;
 }

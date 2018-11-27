@@ -1,64 +1,131 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+
+<title>- : .</title>
+
+<link rel='stylesheet' href='style.css' type='text/css' />
+<!--[if lte IE 6]>
+<link rel='stylesheet' href='http://www.laurabalboa.com/ndxz-studio/site/sample/ie.css' type='text/css' />
+<![endif]-->
+
 <style type='text/css'>
-body {
-  width: 100wh;
-  height: 90vh;
-  color: #fff;
-  background: linear-gradient(-45deg, #E3B7DD, #EAB400, #C16BB7, #B9AEB8);
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 25s ease infinite;
-  -moz-animation: Gradient 25s ease infinite;
-  animation: Gradient 25s ease infinite;
-}
+.grow { float:left; margin-bottom: 18px; }
+	.thumb {  padding:0; text-align:left; display: table; height: 120px; #position: relative; overflow: hidden; width: 120px; }
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@-moz-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-  50% {
-    background-position: 100% 50%
-  }
-  100% {
-    background-position: 0% 50%
-  }
-}
+	.grow strong { margin-top: 3px; text-align: left; display: block; font-weight: normal; text-align: center; }
+	.grow em { font-style: normal; display: none; text-align: center; }
+	
+	.thumb-it { #position: absolute; _top: 50%; display: table-cell; vertical-align: middle; text-align: center; }
+	.thumb-img { #position: relative; width: 120px; display:block; }
 </style>
 
-  </head>
-  <body>
-    <script src="sketch.js"></script>
-  </body>
+<script type='text/javascript' src='http://www.laurabalboa.com/ndxz-studio/site/js/jquery.js'></script>
+<script type='text/javascript' src='http://www.laurabalboa.com/ndxz-studio/site/js/cookie.js'></script>
+<script type='text/javascript' src='http://www.laurabalboa.com/ndxz-studio/site/js/expandingMenus.js'></script>
+<script type='text/javascript' src='http://www.laurabalboa.com/ndxz-studio/site/js/grow.vaska.js'></script>
+
+<script type='text/javascript'>
+path = 'http://www.laurabalboa.com/files/gimgs/';
+
+$(document).ready(function() { 
+	setTimeout('move_up()', 1); 
+	expandingMenu(2); 
+	expandingMenu(3); 
+});
+
+</script>
+
+<style type='text/css'>
+body { background-color: #c4c4c4; }
+</style>
+<style type="text/css">
+.footer {
+	font-size: 12px;
+}
+</style>
+</head>
+
+<body class='section-1'>
+
+
+<div id='menu'>
+<div class='container'>
+<!--
+<p><br />
+</p>
+<ul>
+<li class='section-title'>en curso/current</li>
+<a href='#' onclick="do_click();">works</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='#' onclick="do_click();">contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='#' onclick="do_click();">hi!</a>
+</ul>
+<ul>
+<li class='section-title'>obra/artwork</li>
+<li><a href='http://www.laurabalboa.com/index.php?/projects/internetistv/' onclick="do_click();">Internetis.tv</a></li>
+</ul>
+-->
+
+</div>	
+</div>	
+
+<div id='content'>
+<div class='container'>
+
+<!-- text and image -->
+<p></p>
+<div id="welcome">
+  <div id="speechbubble" data-hover="works"><span><a href = "#">works</a></span></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div id="speechbubble" data-hover="contact"><span>contact</span></div>
+
+</div>
+
+ <table>
+			<tbody>
+			    <tr>
+				<td></td>
+				<td></td>
+				<td colspan="2" rowspan="2">
+				</td>
+				<td></td>
+			    </tr>
+			    <tr>
+				<td class="table-img" colspan="2" rowspan="2">
+				    <a href="2016.iceberg.jaime.lobato.html"><img class="img-thumbnail" src="img/2016/iceberg.jaime.lobato.thumbnail.png"></a>
+				</td>
+				<td></td>
+			    </tr>
+			    <tr>
+				<td class="table-txt" colspan="2" rowspan="2">
+
+				    
+				    <p  class="t-txt mm-t">Bla bla bla . - / ( ´ ¡ ' ' - ) , / - ∫ º _</p>
+
+				</td>
+			    </tr>
+			    <tr>
+				<td></td>
+				<td></td>
+			    </tr>
+			</tbody>
+		    </table>
+
+</td>
+<td></td>
+<td></td></tr>
+
+<p>
+</p>
+<div class='cl'><!-- --></div>
+
+<!-- end text and image -->
+
+</div>
+</div>
+
+</body>
 </html>
