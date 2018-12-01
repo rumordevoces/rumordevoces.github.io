@@ -22,10 +22,23 @@ function setup() {
 }
 
 let hue = 0;
+let saturation = 0;
+let saturation1 = 0;
+let mar = 0;
+let suop = 0;
+let borrar = 0;
+let borrar_all = 0;
 
 function draw() {
 
+  mar++;
+  suop++;
+  borrar++;
+  borrar_all++;
   hue = ++hue % 360;
+  saturation = ++saturation % 50;
+  saturation1 = ++saturation1 % 99;
+
 
   push();
       //translate(-200, -200);
@@ -33,10 +46,46 @@ function draw() {
       //dialogue();
   pop();
 
-
-if (hue >= 1200){
-  hue = 0;
+  if (mar <= 200){
+    push();
+      drift();
+    pop();
   }
+
+  if (mar >= 400){
+    mar = 0;
+  }
+
+  if (suop >= 200){
+    translate(-200, 0);
+    deriva();
+  }
+
+  if (suop >= 400){
+    suop = 0;
+  }
+
+  if (hue >= 1200){
+    hue = 0;
+  }
+
+  if (borrar >= 2000){
+    splash = "";
+    borrar = 0;
+    ruidoX4 = 0;
+    ruidoY4 = 0;
+    ruidoC4 = 0;
+  }
+
+
+  if (borrar_all >= 4000){
+    denuez();
+}
+
+function denuez() {
+    location.reload();
+}
+
 }
 
 function dialogue(splash) {
@@ -54,10 +103,10 @@ function dialogue(splash) {
   noStroke();
   //  fill(0, 0, hue*4);
   // fill(313, hue%99, 99);
-  fill(hue, 400, 400);
+  fill(hue, 62, 99);
 
   textSize(fontsize = posC4);
-  text(splash, posX4, posY4, 400, 400);
+  text(splash, posX4, posY4, 800, 250);
 
 }
 
@@ -95,7 +144,7 @@ function mouseDragged() {
   //strokeWeight(3);
   //fill(hue, 0, 0);
   //fill(hue*2, 4000, 4000);
-  fill(0, 0, hue/4);
+  fill(0, 0, saturation1);
 
   socket.emit('tecla', splash);
 
@@ -108,15 +157,66 @@ function mouseDragged() {
 }
 
 
-function signo() {
+function drift() {
+  push();
   
-/*
-  var data = {
-    x:mouseX,
-    y:mouseY
-  }
-*/
+  var tamango = 20;
 
+  var ruidoX4 = 0.0002;
+  var posX4 = noise(millis() * ruidoX4) * width;
+  var ruidoY4 = 0.00009;
+  var posY4 = noise(millis() * ruidoY4) * height;  
+
+  var ruidoC4 = 0.0008;
+  var posC4 = noise(millis() * ruidoC4) * 85;  
+
+
+  noStroke();
+  //stroke(0, 80);
+  //stroke(0, 180);
+  fill(40, saturation1, 99, 0.2);
+
+  //fill(hue*2, 400, 400, random(255));
+  rectMode(CENTER);
+  //stroke(255, 200, 0);
+  //fill(0, 0, 400, random(100, 255));
+  //strokeWeight(1);
+
+  translate(posX4, posY4);
+
+  ellipse(100, 100, posC4, posC4);
+pop();
+}
+
+function deriva() {
+  push();
+  
+  var tamango = 20;
+
+  var ruidoX4 = 0.0002;
+  var posX4 = noise(millis() * ruidoX4) * windowWidth;
+  var ruidoY4 = 0.00009;
+  var posY4 = noise(millis() * ruidoY4) * windowHeight;  
+
+  var ruidoC4 = 0.0008;
+  var posC4 = noise(millis() * ruidoC4) * 90;  
+
+
+  noStroke();
+  //stroke(0, 80);
+  //stroke(0, 180);
+  fill(288, saturation, 84, 0.2);
+
+  //fill(hue*2, 400, 400, random(255));
+  rectMode(CENTER);
+  //stroke(255, 200, 0);
+  //fill(0, 0, 400, random(100, 255));
+  //strokeWeight(1);
+
+  translate(posX4, posY4);
+
+  ellipse(100, 100, posC4, posC4);
+pop();
 }
 
 function keyTyped() {
