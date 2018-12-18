@@ -15,7 +15,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   textFont("Avenir-Black");
 
-  socket = io.connect('http://localhost:3011');
+  socket = io.connect('https://rumordevoces.github.io:80');
   socket.on('mouse', dialogue);
 
  // background(288, 17, 65);
